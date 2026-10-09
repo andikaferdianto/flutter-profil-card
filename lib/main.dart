@@ -25,19 +25,16 @@ class ProfileScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // -------------------------------------------------------------
-    // UBAH NILAI 'd' DI BAWAH INI SESUAI DIGIT TERAKHIR NIM KAMU!
-    // Contoh: Jika NIM kamu berakhiran 6, ganti 'int d = 6;'
-    // -------------------------------------------------------------
-    const int d = 7;
+    // Digit terakhir NIM 20240801194 adalah 4
+    const int d = 4;
 
-    // Perhitungan ukuran berdasarkan NIM
-    final double paddingCard = 16.0 + d;
-    final double roundedCard = 8.0 + d;
-    final double tinggiTombol = 40.0 + d;
-    final double roundedTombol = 4.0 + d;
-    final double ukuranAvatar = 40.0 + (2 * d);
-    final double jarakNamaNim = 8.0 + d;
+    // Perhitungan ukuran berdasarkan rumus NIM
+    final double paddingCard = 16.0 + d;     // 20.0 px
+    final double roundedCard = 8.0 + d;     // 12.0 px
+    final double tinggiTombol = 40.0 + d;    // 44.0 px
+    final double roundedTombol = 4.0 + d;   // 8.0 px
+    final double ukuranAvatar = 40.0 + (2 * d); // 48.0 px
+    final double jarakNamaNim = 8.0 + d;     // 12.0 px
 
     return Scaffold(
       appBar: AppBar(
@@ -59,19 +56,19 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   // 1. Foto Profil / Avatar
                   CircleAvatar(
-                    radius: ukuranAvatar / 2,
+                    radius: ukuranAvatar / 2, // Radius 24 (Diameter 48 px)
                     child: const Icon(Icons.person, size: 30),
                   ),
                   const SizedBox(height: 16),
 
-                  // 2. Nama Lengkap (Ganti dengan nama kamu jika perlu)
+                  // 2. Nama Lengkap
                   const Text('Andika Ferdianto'),
 
-                  // Jarak Nama dan NIM sesuai formula NIM
+                  // Jarak Nama dan NIM (12 px)
                   SizedBox(height: jarakNamaNim),
 
-                  // 3. NIM (Ganti dengan NIM kamu)
-                  const Text('NIM KAMU'),
+                  // 3. NIM
+                  const Text('20240801194'),
                   const SizedBox(height: 8),
 
                   // 4. Program Studi
